@@ -3,28 +3,9 @@
 import re
 import requests
 
-from scrapy import log
+
 from scrapy.exceptions import CloseSpider
 
-def debug(msg):
-    log.msg(msg, loglevel=log.DEBUG)
-    return
-
-def info(msg):
-    log.msg(msg, loglevel=log.INFO)
-    return
-
-def warning(msg):
-    log.msg(msg, loglevel=log.WARNING)
-    return
-
-def error(msg):
-    log.msg(msg, loglevel=log.ERROR)
-    return
-
-def critical(msg):
-    log.msg(msg, loglevel=log.CRITICAL)
-    return
 
 def response_is_html(response):
     headers = response.headers
