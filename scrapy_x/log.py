@@ -2,28 +2,38 @@ from scrapy import log
 
 
 class Log(object):
+    
+    DEBUG = log.DEBUG
+    INFO = log.INFO
+    WARNING = log.WARNING
+    ERROR = log.ERROR
+    CRITICAL = log.CRITICAL
+    
+    @classmethod
+    def start(cls, logfile=None, loglevel=log.DEBUG):
+        log.start(logfile=logfile, loglevel=loglevel)
 
-    @staticmethod
-    def debug(msg):
+    @classmethod
+    def debug(cls, msg):
         log.msg(msg, loglevel=log.DEBUG)
         return
 
-    @staticmethod
-    def info(msg):
+    @classmethod
+    def info(cls, msg):
         log.msg(msg, loglevel=log.INFO)
         return
 
-    @staticmethod
-    def warning(msg):
+    @classmethod
+    def warning(cls, msg):
         log.msg(msg, loglevel=log.WARNING)
         return
 
-    @staticmethod
-    def error(msg):
+    @classmethod
+    def error(cls, msg):
         log.msg(msg, loglevel=log.ERROR)
         return
 
-    @staticmethod
-    def critical(msg):
+    @classmethod
+    def critical(cls, msg):
         log.msg(msg, loglevel=log.CRITICAL)
         return
